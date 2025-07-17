@@ -8,6 +8,7 @@ use App\Http\Controllers\LoaController;
 use App\Http\Controllers\LoaVerificationController;
 use App\Http\Controllers\LoaRequestController;
 use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 // =======================
 // FRONTEND (Tanpa Login)
@@ -39,9 +40,10 @@ Route::get('/loa/cetak/{id}/{lang}', [LoaController::class, 'printPublic'])->nam
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', fn() => view('admin.dashboard.index'))->name('dashboard');
 
-    // Profile
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    // Profile: arahkan ke tampilan kustom
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('/profile/edit/{name}', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile/update/{name}', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Logout

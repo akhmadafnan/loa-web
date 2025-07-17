@@ -7,7 +7,11 @@
                 <li class="sidebar-item {{ request()->routeIs('journals.*') ? 'active' : '' }}"> <a class="sidebar-link sidebar-link" href="/dashboard" aria-expanded="false"><i data-feather="home" class="feather-icon"></i><span class="hide-menu">Dashboard</span></a></li>
 
                 <li class="list-divider"></li>
+
                 <li class="nav-small-cap"><span class="hide-menu">Masters</span></li>
+                <li class="sidebar-item {{ request()->routeIs('journals.*') ? 'active' : '' }}"> <a class="sidebar-link" href="{{ route('profile.index') }}" aria-expanded="false"><i data-feather="users" class="feather-icon"></i><span class="hide-menu">Pengguna</span></a>
+                </li>
+
                 <li class="sidebar-item {{ request()->routeIs('journals.*') ? 'active' : '' }}"> <a class="sidebar-link" href="{{ route('admin.journals.index') }}" aria-expanded="false"><i data-feather="book" class="feather-icon"></i><span class="hide-menu">Jurnal</span></a>
                 </li>
 
@@ -32,16 +36,6 @@
                 <li class="list-divider"></li>
                 {{-- <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="/logout" aria-expanded="false"><i data-feather="log-out" class="feather-icon"></i><span class="hide-menu">Logout</span></a></li></li> --}}
 
-                <!-- <li class="sidebar-item">
-                    <a class="sidebar-link sidebar-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" aria-expanded="false">
-                        <i data-feather="log-out" class="feather-icon"></i>
-                        <span class="hide-menu">Logout</span>
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li> -->
                 <li class="sidebar-item">
                     <a class="sidebar-link sidebar-link" href="#"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

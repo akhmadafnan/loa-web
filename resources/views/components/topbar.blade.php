@@ -1,6 +1,12 @@
+@php
+use Illuminate\Support\Facades\Auth;
+$user = Auth::user();
+@endphp
+
+
 <div class="navbar-collapse collapse" id="navbarSupportedContent">
     <!-- toggle and nav items -->
-    
+
     <ul class="navbar-nav float-left me-auto ms-3 ps-1">
         <!-- Notification -->
         <li class="nav-item dropdown">
@@ -8,7 +14,7 @@
                 <span><i data-feather="bell" class="svg-icon"></i></span>
                 <span class="badge text-bg-primary notify-no rounded-circle">5</span>
             </a>
-            
+
             <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
                 <ul class="list-style-none">
                     <li>
@@ -22,7 +28,7 @@
                                     <span class="font-12 text-nowrap d-block text-muted">9:30 AM</span>
                                 </div>
                             </a>
-                            
+
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                 <span class="btn btn-success text-white rounded-circle btn-circle"><i data-feather="calendar" class="text-white"></i></span>
@@ -32,7 +38,7 @@
                                     <span class="font-12 text-nowrap d-block text-muted">9:10 AM</span>
                                 </div>
                             </a>
-                            
+
                             <!-- Message -->
                             <a href="javascript:void(0)" class="message-item d-flex align-items-center border-bottom px-3 py-2">
                                 <span class="btn btn-info rounded-circle btn-circle"><i data-feather="settings" class="text-white"></i></span>
@@ -53,7 +59,7 @@
                             </a>
                         </div>
                     </li>
-                    
+
                     <li>
                         <a class="nav-link pt-3 text-center text-dark" href="javascript:void(0);">
                             <strong>Check all notifications</strong>
@@ -65,20 +71,42 @@
         </li>
         <!-- End Notification -->
     </ul>
-                    
+
     <!-- Right side toggle and nav items -->
     <ul class="navbar-nav float-end">
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="../template/assets/images/users/profile-pic.jpg" alt="user" class="rounded-circle" width="40">
-                <span class="ms-2 d-none d-lg-inline-block"><span>Hello,</span> <span
-                class="text-dark">Jason Doe</span> <i data-feather="chevron-down"
-                class="svg-icon"></i></span>
+                @auth
+                <img src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}" width="40" class="rounded-circle">
+                @endauth
+                <span class="ms-2 d-none d-lg-inline-block"><span
+                        class="text-dark">{{ $user->name ?? 'User' }}</span> <i data-feather="chevron-down"
+                        class="svg-icon"></i></span>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-right user-dd animated flipInY">
-                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings" class="svg-icon me-2 ms-1"></i> Account Setting</a>
-                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power" class="svg-icon me-2 ms-1"></i> Logout</a>
+                <a class="dropdown-item" href="{{ route('profile.edit', ['name' => $user->name]) }}"><i data-feather="settings" class="svg-icon me-2 ms-1"></i> Account Setting</a>
+
+                <a class="dropdown-item" href="#"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i data-feather="power" class="svg-icon me-2 ms-1"></i> Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+
             </div>
         </li>
     </ul>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('[data-logout-trigger]').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('logout-form').submit();
+            });
+        });
+    });
+</script>
