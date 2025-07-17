@@ -10,7 +10,8 @@
                 <li class="nav-small-cap"><span class="hide-menu">Masters</span></li>
                 <li class="sidebar-item {{ request()->routeIs('journals.*') ? 'active' : '' }}"> <a class="sidebar-link" href="{{ route('admin.journals.index') }}" aria-expanded="false"><i data-feather="book" class="feather-icon"></i><span class="hide-menu">Jurnal</span></a>
                 </li>
-                <li class="sidebar-item {{ request()->routeIs('journals.*') ? 'active' : '' }}"> <a class="sidebar-link" href="/" aria-expanded="false"><i data-feather="archive" class="feather-icon"></i><span class="hide-menu">Penerbit</span></a>
+
+                <li class="sidebar-item {{ request()->routeIs('penerbits.*') ? 'active' : '' }}"> <a class="sidebar-link" href="{{ route('admin.penerbits.index') }}" aria-expanded="false"><i data-feather="archive" class="feather-icon"></i><span class="hide-menu">Penerbit</span></a>
                 </li>
 
                 <li class="list-divider"></li>

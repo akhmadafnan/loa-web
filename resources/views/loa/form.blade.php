@@ -55,8 +55,8 @@
                             <div class="form-group">
                                 <label>Year</label>
                                 <select type="number" name="year" class="form-control" required>
-                                    @for ($y = now()->year; $y >= 2000; $y--)
-                                    <option value="{{ $y }}">{{ $y }}</option>
+                                    @for ($y = now()->year + 2; $y >= 2000; $y--)
+                                    <option value="{{ $y }}" {{ $y == now()->year ? 'selected' : '' }}>{{ $y }}</option>
                                     @endfor
                                 </select>
                                 <p class="text-danger"></p>

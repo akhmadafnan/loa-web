@@ -11,7 +11,7 @@
     <meta name="author" content="">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/assets/images/favicon.png') }}">
     <title>Freedash Template - The Ultimate Multipurpose admin template</title>
 
     <!-- Custom CSS -->
@@ -24,10 +24,10 @@
 </head>
 
 <body>
-    
-    
+
+
     <!-- Preloader - style you can find in spinners.css -->
-    
+
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
@@ -35,9 +35,8 @@
         </div>
     </div>
 
-    
+
     <!-- Main wrapper - style you can find in pages.scss -->
-    
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <!-- Topbar header - style you can find in pages.scss -->
@@ -56,7 +55,7 @@
                         </a>
                     </div>
                     <!-- End Logo -->
-                    
+
                     <!-- Toggle which is visible on mobile only -->
                     <a class="topbartoggler d-block d-lg-none waves-effect waves-light" href="javascript:void(0)"
                         data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -68,45 +67,44 @@
                 <x-topbar></x-topbar>
             </nav>
         </header>
-        
+
         <!-- End Topbar header -->
-        
-        
+
+
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        
+
         <x-sidebar></x-sidebar>
-        
+
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        
-        
+
+
         <!-- Page wrapper  -->
-        
+
         <div class="page-wrapper">
-            
+
             @yield('isi')
-            
-            
+
             <!-- footer -->
-            
+
             <footer class="footer text-center text-muted">
                 All Rights Reserved by Zureka Publish. Developed by <a
                     href="https://instagram.com/afnanf.id" target="_blank">afnanf.id</a>
             </footer>
-            
+
             <!-- End footer -->
-            
+
         </div>
-        
+
         <!-- End Page wrapper  -->
-        
+
     </div>
-    
+
     <!-- End Wrapper -->
-    
+
     <!-- End Wrapper -->
-    
+
     <!-- All Jquery -->
-    
+
     <script src="{{ asset('template/assets/libs/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('template/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <!-- apps -->

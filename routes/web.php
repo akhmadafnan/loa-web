@@ -6,8 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\LoaController;
 use App\Http\Controllers\LoaVerificationController;
-use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\LoaRequestController;
+use App\Http\Controllers\PenerbitController;
 
 // =======================
 // FRONTEND (Tanpa Login)
@@ -53,6 +53,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('logout');
 });
 
+
 // =======================
 // BACKEND ADMIN ROUTES
 // =======================
@@ -77,6 +78,9 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Route cetak
     Route::get('/loas/print/{registration_number}/{lang}', [LoaController::class, 'print'])->name('loa.print');
+
+    // Penerbit
+    Route::resource('penerbits', PenerbitController::class);
 
     // Route::get('/loas/{id}/print/{lang}', [LoaController::class, 'print'])->name('loa.print');
 
