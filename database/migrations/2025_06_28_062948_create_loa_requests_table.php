@@ -13,6 +13,14 @@ return new class extends Migration
     {
         Schema::create('loa_requests', function (Blueprint $table) {
             $table->id();
+            $table->string('id_article');
+            $table->string('volume');
+            $table->string('number');
+            $table->string('month');
+            $table->string('year');
+            $table->string('article_title');
+            $table->string('article_author');
+            $table->foreignId('journal_id')->constrained('journals')->onDelete('cascade');
             $table->timestamps();
         });
     }

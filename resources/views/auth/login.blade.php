@@ -1,5 +1,9 @@
 @extends('layouts.frontend')
 
+@php
+use Illuminate\Support\Facades\Route;
+@endphp
+
 @section('content')
 <section class="py-5">
     <div class="container px-5">
@@ -10,7 +14,7 @@
                 <h1 class="fw-bolder">Login</h1>
                 <p class="lead fw-normal text-muted mb-0">Please enter your username and password to log in to the admin page!</p>
             </div>
-            
+
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <form action="{{ route('login') }}" method="POST" accept-charset="utf-8">
@@ -21,33 +25,33 @@
                             <label for="email" :value="__('Email')">Email</label>
                             <p :messages="$errors->get('email')" class="text-danger"></p>
                         </div>
-                        
+
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required autocomplete="current-password" >
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Password" required autocomplete="current-password">
                             <label for="password" :value="__('Password')">Password</label>
                             <p :messages="$errors->get('password')" class="text-danger"></p>
-                        </div>      
-                        
+                        </div>
+
                         <div class="d-none" id="submitErrorMessage">
                             @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}">Forgot your password?</a>
                             @endif
                         </div>
-                            
-                            <!-- Submit Button-->
-                            {{-- <div class="d-grid mt-4">
+
+                        <!-- Submit Button-->
+                        {{-- <div class="d-grid mt-4">
                                 <button type="submit" class="btn btn-primary btn-lg">
                                     {{ ('Log in') }}
-                                </button>
-                            </div> --}}
-                            <div class="d-grid">
-                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">{{ ('Log in') }}</button>
-                            </div>
-                    </form>   
+                        </button>
+                </div> --}}
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">{{ ('Log in') }}</button>
                 </div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 </section>
 @endsection

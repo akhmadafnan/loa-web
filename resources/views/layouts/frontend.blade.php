@@ -9,6 +9,7 @@
         content="Website Letter of Acceptance Ini Akan Memberikan Kemudahan Kepada Penulis Untuk Melakukan Permintaan LOA Maupun Download Dan Cetak LOA" />
     <meta name="keywords" content="loa" />
     <meta name="author" content="afnanf.id" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="google-site-verification" content="" />
     <title>LOA Zureka Publish</title>
 
