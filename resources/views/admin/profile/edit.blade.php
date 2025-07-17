@@ -1,5 +1,6 @@
 @extends('layouts.backend')
 
+@section('title', 'Edit Data Profile | Manajemen Letter of Acceptance')
 @section('isi')
 
 @php

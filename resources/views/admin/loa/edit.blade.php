@@ -1,5 +1,6 @@
 @extends('layouts.backend')
 
+@section('title', 'Edit LOA | Manajemen Letter of Acceptance')
 @section('isi')
 <div class="page-breadcrumb">
     <div class="row">

@@ -15,13 +15,13 @@
 
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon"
-        href="https://loa.padangtekno.com/gambar/1705150187_d311995398b232d0b068.jpg" />
+        href="{{asset('img/iconic.png')}}" />
 
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="https://loa.padangtekno.com/template/css/styles.css" rel="stylesheet" />
+    <link href="{{asset('css/core.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css" />
 
     <!-- JS -->

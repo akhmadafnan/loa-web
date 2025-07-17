@@ -1,5 +1,5 @@
 @extends('layouts.backend')
-
+@section('title', 'Dashboard | Manajemen Letter of Acceptance')
 @section('isi')
 <!-- Bread crumb and right sidebar toggle -->
 <div class="page-breadcrumb">

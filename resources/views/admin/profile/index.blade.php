@@ -1,5 +1,6 @@
 @extends('layouts.backend')
 
+@section('title', 'Data Profile | Manajemen Letter of Acceptance')
 @section('isi')
 <!-- Breadcrumb -->
 <div class="page-breadcrumb">

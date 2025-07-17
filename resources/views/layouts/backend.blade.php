@@ -11,8 +11,9 @@
     <meta name="author" content="">
 
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('template/assets/images/favicon.png') }}">
-    <title>Freedash Template - The Ultimate Multipurpose admin template</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/iconic.png') }}">
+    <title>@yield('title')</title>
+
 
     <!-- Custom CSS -->
     <link href="{{ asset('template/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
@@ -50,8 +51,8 @@
                     <!-- Logo -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="/">
-                            <img src="{{ asset('template/assets/images/freedashDark.svg') }}" alt="" class="img-fluid">
+                        <a href="/dashboard">
+                            <img src="{{ asset('img/logosidebar.png') }}" alt="" class="img-fluid" width="80%">
                         </a>
                     </div>
                     <!-- End Logo -->

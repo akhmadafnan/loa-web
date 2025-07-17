@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container px-5">
             <a class="navbar-brand" href="/">
-                <img src="https://loa.padangtekno.com/gambar/1705150187_d311995398b232d0b068.jpg" alt="Bootstrap"
+                <img src="{{asset('img/logoheader.png')}}" alt="Logo Header"
                     width="35" />
                 <b>Letter of Acceptance</b>
             </a>

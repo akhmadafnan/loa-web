@@ -1,5 +1,6 @@
 @extends('layouts.backend')
 
+@section('title', 'Tambah Data Penerbit | Manajemen Letter of Acceptance')
 @section('isi')
 <!-- Bread crumb and right sidebar toggle -->
 <div class="page-breadcrumb">
