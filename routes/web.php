@@ -8,6 +8,7 @@ use App\Http\Controllers\LoaController;
 use App\Http\Controllers\LoaVerificationController;
 use App\Http\Controllers\LoaRequestController;
 use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 // =======================
@@ -38,7 +39,7 @@ Route::get('/loa/cetak/{id}/{lang}', [LoaController::class, 'printPublic'])->nam
 // AUTH & DASHBOARD
 // =======================
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', fn() => view('admin.dashboard.index'))->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     // Profile: arahkan ke tampilan kustom
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
@@ -91,5 +92,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Route::get('/loas/{id}/print/{lang}', [LoaController::class, 'print'])->name('loa.print');
     // Route::get('/loas/{id}/print/{lang}', [LoaController::class, 'print'])->name('admin.loa.print');
 });
+
+Route::get('/recent-activity', [App\Http\Controllers\DashboardController::class, 'recentActivity'])->name('recent.activity');
+
 
 require __DIR__ . '/auth.php';
