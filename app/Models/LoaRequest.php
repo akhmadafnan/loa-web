@@ -19,6 +19,7 @@ class LoaRequest extends Model
         'status',
         'link_journal',
         'letter_number',
+        'qr_code_path',
     ];
 
     public function journal()

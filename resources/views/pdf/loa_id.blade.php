@@ -133,7 +133,7 @@
 
     <!-- Kontainer QR dan TTD -->
     <div>
-        <table style="width: 100%; margin-top: 90px;">
+        <table style="width: 100%; margin-top: 80px;">
             <!-- Row 1: QR Code kiri, kosong kanan -->
             <tr>
                 <td style="width: 50%; text-align: left;">
