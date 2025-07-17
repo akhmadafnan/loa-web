@@ -19,9 +19,9 @@
 
         .header {
             text-align: center;
-            border-bottom: 4px solid #000;
             padding-bottom: 3px;
             margin-bottom: 20px;
+            font-family: Arial, sans-serif;
         }
 
         .header h2 {
@@ -74,12 +74,29 @@
 
 <body>
 
-    <!-- Header -->
-    <div class="header">
-        <img src="{{ public_path('storage/' . $loa->journal->logo) }}" height="70">
-        <h2 style="margin-top: 0;">{{ $loa->journal->name_journals }}</h2>
-        <p style="font-size: 12px;">HP : +62 856-4618-9758 | E-ISSN : {{ $loa->journal->e_issn }} ; P-ISSN : {{ $loa->journal->p_issn }}</p>
+    <div style="width: 100%; display: table; margin-bottom: 20px; font-family: Arial, sans-serif;">
+        <!-- Kolom Kiri: Logo Penerbit -->
+        <div style="display: table-cell; width: 10%; text-align: center; vertical-align: middle;">
+            <img src="{{ public_path('storage/' . $loa->journal->penerbit->logo) }}" alt="Logo Kiri" height="70">
+        </div>
+
+        <!-- Kolom Tengah: Nama Jurnal dan Info -->
+        <div style="display: table-cell; width: 80%; text-align: center; vertical-align: middle;">
+            <h2 style="margin: 0px 0;">{{ $loa->journal->name_journals }}</h2>
+            <p style="font-size: 12px; margin: 0px 0;">
+                HP: +62 856-4618-9758 | E-ISSN: {{ $loa->journal->e_issn }} ; P-ISSN: {{ $loa->journal->p_issn }}
+            </p>
+        </div>
+
+        <!-- Kolom Kanan: Logo Jurnal -->
+        <div style="display: table-cell; width: 10%; text-align: center; vertical-align: middle;">
+            <img src="{{ public_path('storage/' . $loa->journal->logo) }}" alt="Logo Kanan" height="70">
+        </div>
     </div>
+    <hr style="border: 2px solid black; margin: 10px 0;">
+
+
+
 
     <!-- Judul -->
     <h3 style="text-align: center; text-transform: uppercase; margin-bottom: 4px;">Surat Keterangan Publikasi Artikel Jurnal</h3>
@@ -116,21 +133,9 @@
 
     <!-- Kontainer QR dan TTD -->
     <div>
-        <table style="width: 100%; margin-top: 50px;">
+        <table style="width: 100%; margin-top: 90px;">
             <!-- Row 1: QR Code kiri, kosong kanan -->
             <tr>
-                <!-- <td style="width: 50%; text-align: left;">
-                    <img src="{{ $qrImage }}" width="120" alt="QR Code">
-
-                    <p style="margin: 4px 0; line-height: 1; font-size: 10pt">
-                        Keaslian LOA Dapat<br>
-                        Diperiksa Dengan<br>
-                        Memindai QR Code<br>
-                        Disamping!
-                    </p>
-                    <p style="margin: 0; font-size: 10pt;"><strong>{{ $loa->registration_number }}</strong></p>
-                </td> -->
-
                 <td style="width: 50%; text-align: left;">
                     <table>
                         <tr>
@@ -182,19 +187,11 @@
     <div style="text-align: left; font-size: 10pt;">
         <p style="margin: 4px 0; line-height: 1; font-size: 13px; font-family: Arial, sans-serif;">
             Penerbit :<br>
-            <b style="font-size: 20px;">Zureka Publish</b><br>
-            Ditotrunan, Kab. Lumajang, Jawa Timur.<br>
-            +62 856-4618-9758
+            <b style="font-size: 18px;">{{ $loa->journal->penerbit->nama }}</b><br>
+            {{ $loa->journal->penerbit->alamat }}<br>
+            Hub. {{ $loa->journal->penerbit->no_hp }}
         </p>
     </div>
-
-
-
-    <!-- Footer -->
-    <!-- <div class="footer">
-        Penerbit: PT. Padang Tekno Corp - Kota Kisaran, Kab. Asahan, Sumatera Utara<br>
-        Telp: +62 851-5682-9831 | Email: padang.tekno.corp@gmail.com
-    </div> -->
 
 </body>
 

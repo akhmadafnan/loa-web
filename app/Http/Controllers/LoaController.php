@@ -14,7 +14,7 @@ class LoaController extends Controller
     // Tampilkan semua LOA yang disetujui
     public function index()
     {
-        $loas = LoaRequest::with('journal')
+        $loas = LoaRequest::with('journal.penerbit')
             ->where('status', 'approved')
             ->latest()
             ->paginate(10);
